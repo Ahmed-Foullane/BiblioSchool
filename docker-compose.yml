@@ -1,0 +1,40 @@
+# docker-compose.yml
+services:
+  web_books:
+    build: .
+    container_name: php_web_books
+    ports:
+      - "8090:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db_books
+    restart: always
+  db_books:
+    image: mysql:8.0
+    container_name: php_mysql_books
+    ports:
+      - "3307:3307"
+    environment:
+      MYSQL_ROOT_PASSWORD: ahmed
+      MYSQL_DATABASE: books
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+    volumes:
+      - mysql_data:/var/lib/mysql
+    restart: always
+
+  # Add this phpmyadmin service
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: php_phpmyadmin_books
+    ports:
+      - "8082:80"
+    environment:
+      - PMA_HOST=db_books
+    depends_on:
+      - db_books
+    restart: always
+
+volumes:
+  mysql_data:
