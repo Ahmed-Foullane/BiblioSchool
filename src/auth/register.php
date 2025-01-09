@@ -1,3 +1,10 @@
+
+
+<?php
+require_once "../controls/register.inc.php";
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +13,7 @@
     <meta name="description" content="web site for selling cars">
 
     <title>Document</title>
-    <link rel="stylesheet" href="./assets/styles/style.css?v=<?php echo time()?>">
+    <link rel="stylesheet" href="./public/styles/style.css?v=<?php echo time()?>">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
@@ -18,8 +25,7 @@
         <nav>
             <ul class="navMenu">
                 <li><a class="navItem" href="index.html">Home</a></li>
-                <li><a class="navItem" href="Models.html">Models</a></li>
-                <li><a class="navItem" href="contact.html">Contact</a></li>
+               
                 
             </ul>
             <div style="display: flex; flex-direction: row;">
@@ -38,7 +44,7 @@
 
     <section class="authentcation">
 
-        <form>
+        <form action="index.php" method="POST">
             <h3>Sign Up</h3>
             <label for="name">name:</label>
             <input id="name" type="text" name="name" placeholder="enter your name">
@@ -48,24 +54,25 @@
             <div>
                 
                 <input id="signUpPassword" type="password" name="password" placeholder="enter  password">
-                <img class="eye open" src="../assets/icons/eye.svg"  alt="">
-                <img class="eye close" src="../assets/icons/closeEye.svg"  alt="">
+                <img class="eye open" src="./public/assets/icons/eye.svg"  alt="">
+                <img class="eye close" src="./public/assets/icons/closeEye.svg"  alt="">
 
             </div>
             <label for="name">confirm password:</label>
             <div>
 
                 <input type="password" class="confirmPassword" name="confirmePassword" placeholder="confirm  password">
-                <img class="eye open" src="../assets/icons/eye.svg"  alt="">
-                <img class="eye close eye" src="../assets/icons/closeEye.svg" style="width: 25px; height: 20px;" alt="">
+                <img class="eye open" src="./public/assets/icons/eye.svg"  alt="">
+                <img class="eye close eye" src="./public/assets/icons/closeEye.svg" style="width: 25px; " alt="">
             </div>
-            
-            <button id="signUpBtn">Sign Up</button>
+
+            <input type="submit" name="submit" id="signUpBtn" valu="Sign Up">
+
            <p class="go-to-register">Alrady have an acount  <a href="login.html">Sign In</a></p> 
         </form>
     </section>
 
-    <script src="../script.js"></script>
+    <script src="./public/script.js?v=<?php echo time(); ?>"></script>
     
 </body>
 </html>

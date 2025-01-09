@@ -80,7 +80,6 @@ function registerUserAndChangeUrl() {
   localStorage.setItem("userInfo", JSON.stringify(user));
   userJson = JSON.parse(localStorage.getItem("userInfo"));
   changeStyleIfUserLoginOrExist();
-  location.href = "index.html";
 }
 
 function changeStyleIfUserLoginOrExist() {
@@ -98,7 +97,6 @@ function changeStyleIfUserLoginOrExist() {
 }
 
 logInBtn?.addEventListener("click", (e) => {
-  e.preventDefault();
   user.email = loginInEmail.value;
   user.password = logInPassword.value;
   if (
@@ -107,7 +105,6 @@ logInBtn?.addEventListener("click", (e) => {
   ) {
     sendUserDataToStorage(true);
     changeStyleIfUserLoginOrExist();
-    location.href = "index.html";
   } else {
     Swal.fire({
       icon: "error",
@@ -117,7 +114,6 @@ logInBtn?.addEventListener("click", (e) => {
 });
 
 signUpBtn?.addEventListener("click", (e) => {
-  e.preventDefault();
   let strongPassword = false;
   let validEmail = false;
   let comparePassword = false;

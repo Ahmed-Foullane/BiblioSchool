@@ -14,10 +14,10 @@ services:
     image: mysql:8.0
     container_name: php_mysql_books
     ports:
-      - "3307:3307"
+      - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: ahmed
-      MYSQL_DATABASE: books
+      MYSQL_DATABASE: biblio_school
       MYSQL_USER: admin
       MYSQL_PASSWORD: admin
     volumes:
