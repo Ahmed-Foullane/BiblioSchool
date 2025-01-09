@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +9,12 @@
 <body>
     
     <?php
+
         if (true) {
-          return   require_once "./auth/register.php";
+          return   require_once "./src/auth/register.php";
         }
+
     ?>
 
-    <p>how are u</p>
 </body>
 </html>

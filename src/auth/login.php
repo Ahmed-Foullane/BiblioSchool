@@ -6,7 +6,7 @@
     <meta name="description" content="web site for selling cars">
 
     <title>Document</title>
-    <link rel="stylesheet" href="./assets/styles/style.css?v=<?php echo time()?>">
+    <link rel="stylesheet" href="./public/styles/style.css?v=<?php echo time()?>">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
@@ -16,8 +16,7 @@
         <nav>
             <ul class="navMenu">
                 <li><a class="navItem" href="index.html ">Home</a></li>
-                <li><a class="navItem" href="Models.html">Models</a></li>
-                <li><a class="navItem" href="contact.html">Contact</a></li>    
+               
                 
             </ul>
             <div style="display: flex; flex-direction: row;">
@@ -44,14 +43,14 @@
             <label for="password">enter password:</label>
             <div>
                 <input id="password" type="password" name="pasword" placeholder="enter your email">
-                <img class="eye open" src="./assets/icons/eye.svg" style="width: 25px; height: 20px; display: none;" alt="">
-                <img class="eye close" src="./assets/icons/closeEye.svg" style="width: 25px; height: 20px;" alt="">
+                <img class="eye open" src="./public/assets/icons/eye.svg" style="width: 25px; height: 20px; display: none;" alt="">
+                <img class="eye close" src="./public/assets/icons/closeEye.svg" style="width: 25px; height: 20px;" alt="">
             </div>
             <button id="loginUser">Sign In</button>
            <p class="go-to-register">I don't have an acount<a href="singUp.html">Register</a></p> 
         </form>
     </section>
 
-    <script src="../script.js?v=<?php echo time()?>"></script>
+    <script src="./public/script.js?v=<?php echo time();?>"></script>
 </body>
 </html>

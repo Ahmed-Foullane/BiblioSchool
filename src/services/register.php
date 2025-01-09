@@ -1,71 +1,72 @@
 <?php
+// namespace BiblioSchool\Services;
+
 
 class Register {
-    private $name;
-    private $email;
-    private $password;
-    private $confirmPassword;  
+    protected $name;
+    protected $email;
+    protected $password;
+    protected $confirmPassword; 
+
     
     public function __construct($name, $email, $password, $confirmPassword){
         $this->name = $name;
         $this->email = $email;
         $this->password = $password;
         $this->confirmPassword = $confirmPassword;
-
     }
+
+
 
     public function emptyInput(){
         $result;
         if (empty($this->name || $this->email || $this->password || $this->confirmPassword)) {
-            $result = false;
+            return "fill all inputs";
         }else{
-            $result = true;
+          return true;  
         }
-        return $result;
+        
     }
 
-    private function invalidEmail() {
+    public function invalidEmail() {
         $result;
         if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
-            $result = false;
+            return "invalid email";
         } else {
-            $result = true;
+          return true;
         }
-        return $result;
     }
 
-    private function pwdMatch() {
+    public function pwdMatch() {
         $result;
         if ($this->password !== $this->confirmPassword) {
-            $result = false;
+            return "match password";
         } else {
-            $result = true;
+          return true;  
         }
-        return $result;
     }
 
-    private function password() {
+    public function password() {
         $result;
         if (strlen($this->password) < 8 || 
             !preg_match("/[A-Z]/", $this->password) || 
             !preg_match("/[a-z]/", $this->password) || 
             !preg_match("/[0-9]/", $this->password)) {
-            $result = false;
+            return "password is not strong";
         } else {
-            $result = true;
+          return true;  
         }
-        return $result;
+        
     }
 
-    // Fix for existing invalidUserName method
-    private function invalidUserName() {
+    public function invalidUserName() {
         $result;
         if (!preg_match("/^[a-zA-Z0-9]*$/", $this->name)) {
-            $result = false;
+            return "in valid user name";
         } else {
-            $result = true;
+          return true;  
         }
-        return $result; // Added missing return
+         
     }
 }
 
